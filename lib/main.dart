@@ -43,8 +43,8 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          buildGamerTile('Harsh', '20.2 K', 'assets/images/tomb_raider.png'),
-          buildGamerTile('Malhar', '15.4 K', 'assets/images/tomb_raider.png'),
+          buildGamerTile('Harsh', '20.2 K'),
+          buildGamerTile('Malhar', '15.4 K'),
           // Add more tiles if needed
         ],
       ),
@@ -67,13 +67,13 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildGamerTile(String username, String views, String imageUrl) {
+  Widget buildGamerTile(String username, String views) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: Column(
           children: [
-            Image.asset(imageUrl), // Use NetworkImage if loading online
+            Image.asset('assets/images/bgmi1.jpg'), // Use NetworkImage if loading online
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Row(
