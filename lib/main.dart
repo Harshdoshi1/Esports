@@ -14,7 +14,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // Track the follow state for each gamer
+  List<bool> isFollowing = [false, false]; // For two gamers in this example
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +38,7 @@ class HomePage extends StatelessWidget {
           child: TextField(
             decoration: InputDecoration(
               hintText: 'Gamer..Videos',
-              prefixIcon: Icon(Icons.search, color: Colors.grey),
+              prefixIcon: Icon(Icons.search, color: const Color.fromARGB(255, 116, 116, 116)),
               filled: true,
               fillColor: Colors.grey[200],
               border: OutlineInputBorder(
@@ -43,9 +51,8 @@ class HomePage extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          buildGamerTile('Harsh', '20.2 K'),
-          buildGamerTile('Malhar', '15.4 K'),
-          // Add more tiles if needed
+          buildGamerTile(0, 'Harsh', '20.2 K', 'assets/images/bgmi1.jpg'),
+          buildGamerTile(1, 'malhar', '15.4 K', 'assets/images/gtav.jpg'),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -67,13 +74,13 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildGamerTile(String username, String views) {
+  Widget buildGamerTile(int index, String username, String views, String imageUrl) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: Column(
           children: [
-            Image.asset('assets/images/bgmi1.jpg'), // Use NetworkImage if loading online
+            Image.asset(imageUrl),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Row(
@@ -88,12 +95,19 @@ class HomePage extends StatelessWidget {
                   Text('views $views'),
                   SizedBox(width: 10),
                   ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.person_add, size: 16),
-                    label: Text('Follow'),
+                    onPressed: () {
+                      setState(() {
+                        isFollowing[index] = !isFollowing[index];
+                      });
+                    },
+                    icon: Icon(
+                      isFollowing[index] ? Icons.person_remove : Icons.person_add,
+                      size: 16,
+                    ),
+                    label: Text(isFollowing[index] ? 'Following' : 'Follow'),
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white, 
-                      backgroundColor: Colors.green,
+                      backgroundColor: isFollowing[index] ? const Color.fromARGB(255, 54, 162, 244) : Colors.green,
                     ),
                   ),
                 ],
