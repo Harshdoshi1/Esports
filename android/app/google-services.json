@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "379506167391",
-    "project_id": "blog-app-f8e97",
-    "storage_bucket": "blog-app-f8e97.firebasestorage.app"
+    "project_number": "731624379189",
+    "project_id": "esports-4b102",
+    "storage_bucket": "esports-4b102.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379506167391:android:293fd3783e8e9c3f9255ea",
+        "mobilesdk_app_id": "1:731624379189:android:57ba934387291108eaf27c",
         "android_client_info": {
-          "package_name": "com.example.blogapp"
+          "package_name": "com.esports.app"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAJIsyHJskXphXdrmh5OTYXfpbYVWSh_s8"
+          "current_key": "AIzaSyBaoFW5Wx47KeCeabR-pvAYAhrfcocuqd0"
         }
       ],
       "services": {

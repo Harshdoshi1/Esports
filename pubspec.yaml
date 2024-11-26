@@ -18,7 +18,7 @@ dependencies:
   # Firebase Core for integrating Firebase services.
   firebase_core: ^3.8.0
 
-  # Add other dependencies such as Firebase Authentication or Firestore if needed.
+  # Uncomment these if you need Firebase Authentication or Firestore.
   # firebase_auth: ^4.0.0
   # cloud_firestore: ^5.0.0
 
@@ -30,24 +30,17 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
-  # Material design components (essential for many Flutter apps).
+  # Enables Material design components.
   uses-material-design: true
 
-  # Assets section where you can define your image assets and other resources.
+  # Define assets like images here.
   assets:
     - assets/images/
 
-  # Additional assets may be added here for other resources like fonts, audio files, etc.
-
-  # To add custom fonts to your application, add a fonts section:
+  # Add additional assets like fonts or audio here, if needed.
   # fonts:
   #   - family: Roboto
   #     fonts:
   #       - asset: fonts/Roboto-Regular.ttf
   #       - asset: fonts/Roboto-Bold.ttf
-  #         weight: 700
-  #   - family: Arial
-  #     fonts:
-  #       - asset: fonts/Arial-Regular.ttf
-  #       - asset: fonts/Arial-Bold.ttf
   #         weight: 700
